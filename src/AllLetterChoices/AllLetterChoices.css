@@ -1,0 +1,28 @@
+.letters-container {
+    padding-top: 5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.letters-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.single-letter-container {
+    font-size: 1.5rem;
+    width: 14%;
+    margin-bottom: 1rem;
+}
+
+.single-letter-choice {
+    padding: 15%;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(255, 149, 149);
+    border-radius: 10%;
+    cursor: pointer;
+}
