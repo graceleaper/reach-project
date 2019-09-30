@@ -1,30 +1,28 @@
-import React from "react";
-import "./WordToGuess.css";
+import React from "react"
+import "./WordToGuess.css"
 
-class WordToGuess extends React.Component {
+const WordToGuess = ({ correctGuesses, lettersToGuess, incorrectGuesses }) => {
 
-      letterCheck = (letter) => {
-          if (this.props.guessedLetters.includes(letter)) return "single-letter shown"
-          else return "single-letter hidden"
-      }
-
-  render() {
+  const letterCheck = (letter) => {
+    if (correctGuesses.includes(letter)) return "single-letter shown"
+    else return "single-letter hidden"
+  }
 
     return (
       <div className="container-letters">
-          {console.log(this.props.guessedLetters)}
-          {this.props.lettersToGuess.map((letter, index) => {
+          {console.log(correctGuesses)}
+          {console.log(incorrectGuesses)}
+          {lettersToGuess.map((letter, index) => {
           return (
             <div className="slot" key={index}>
-                <div className={this.letterCheck(letter)}>
+                <div className={letterCheck(letter)}>
                     {letter}
                 </div>
             </div>
           )
           })}
       </div>
-    );
-  }
+    )
 }
 
-export default WordToGuess;
+export default WordToGuess
