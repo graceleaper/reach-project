@@ -1,0 +1,27 @@
+.diagram-container {
+    text-align: center;
+}
+
+.current-image {
+    width: 20%;
+}
+
+@keyframes imageDrop {
+    0% {
+        transform: translateY(-500%);
+    }
+    50% {
+        transform: translateY(-400%);
+    }
+    75% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+.animation {
+    -webkit-animation: imageDrop 1.8s;
+    animation: imageDrop 1.8s;
+}

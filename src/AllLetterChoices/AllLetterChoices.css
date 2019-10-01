@@ -1,5 +1,5 @@
 .letters-container {
-    padding-top: 5rem;
+    padding-top: 3rem;
     width: 80%;
     margin: 0 auto;
 }
@@ -14,7 +14,7 @@
 
 .single-letter-container {
     font-size: 1.5rem;
-    width: 14%;
+    width: 13%;
     margin-bottom: 1rem;
 }
 
@@ -22,7 +22,8 @@
     padding: 15%;
     width: 50%;
     text-align: center;
-    background-color: rgb(255, 149, 149);
+    background-color: #45af4a;
+    color: white;
     border-radius: 10%;
     cursor: pointer;
 }

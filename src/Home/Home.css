@@ -1,0 +1,88 @@
+body {
+    background-color: #FADDAF;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.game-intro {
+    background-color: #dd614a;
+    color: white;
+    padding: 1em;
+    height: 15em;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+button {
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    width: 5rem;
+    background-color: #6ba292;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border: none;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+@keyframes fall-from-top {
+    0% {
+        transform: translateY(-900%);
+    }
+    50% {
+        transform: translateY(-200%)
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+.falling-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.object {
+    margin: 3%;
+}
+
+.fall-from-top {
+    -webkit-animation: fall-from-top 1.5s;
+    animation: fall-from-top 1.5s;
+}
+
+.fall-from-top-2 {
+    -webkit-animation: fall-from-top 3s;
+    animation: fall-from-top 3s;
+}
+
+.fall-from-top-3 {
+    -webkit-animation: fall-from-top 2s;
+    animation: fall-from-top 2s;
+}
+
