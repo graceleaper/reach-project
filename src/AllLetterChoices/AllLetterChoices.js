@@ -6,16 +6,8 @@ class AllLetterChoices extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            alphabet: []
+            alphabet: choices
     }
-}
-
-componentDidMount() {
-    this.setState({alphabet: choices})
-}
-
-handleClick = (letter) => {
-    this.props.correctionCheck(letter)
 }
 
   render() {
@@ -23,11 +15,10 @@ handleClick = (letter) => {
         <div className="letters-container">
             <div className="letters-board">
             {this.state.alphabet.map((letter, index) => {
-
                 return (
                     <div className="single-letter-container" key={index}>
                         <div
-                            onClick={() => this.handleClick(letter)}
+                            onClick={() => this.props.correctionCheck(letter)}
                             className="single-letter-choice"
                         >
                             {letter}

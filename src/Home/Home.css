@@ -51,13 +51,13 @@ a, a:visited {
 
 @keyframes fall-from-top {
     0% {
-        transform: translateY(-900%);
+        transform: translateY(-200%);
     }
     50% {
-        transform: translateY(-200%)
+        transform: translateY(-20%);
     }
     100% {
-        transform: translateY(0%)
+        transform: translateY(0%);
     }
 }
 
@@ -72,17 +72,17 @@ a, a:visited {
 }
 
 .fall-from-top {
-    -webkit-animation: fall-from-top 1.5s;
-    animation: fall-from-top 1.5s;
+    -webkit-animation: fall-from-top 0.5s;
+    animation: fall-from-top 0.5s;
 }
 
 .fall-from-top-2 {
-    -webkit-animation: fall-from-top 3s;
-    animation: fall-from-top 3s;
+    -webkit-animation: fall-from-top 2s;
+    animation: fall-from-top 2s;
 }
 
 .fall-from-top-3 {
-    -webkit-animation: fall-from-top 2s;
-    animation: fall-from-top 2s;
+    -webkit-animation: fall-from-top 1s;
+    animation: fall-from-top 1s;
 }
 

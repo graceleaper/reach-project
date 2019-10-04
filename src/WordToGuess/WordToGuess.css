@@ -8,15 +8,9 @@
 
 .slot {
     text-align: center;
-    /* padding-bottom: 0.5rem;*/
     border-bottom: solid;
     border-width: 0.1rem;
     width: 8%;
-}
-
-.shown {
-    visibility: visible;
-    color: black;
 }
 
 .hidden {

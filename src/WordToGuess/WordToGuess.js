@@ -1,17 +1,14 @@
 import React from "react"
 import "./WordToGuess.css"
 
-const WordToGuess = ({ correctGuesses, lettersToGuess, incorrectGuesses }) => {
+const WordToGuess = ({correctGuesses, lettersToGuess}) => {
 
   const letterCheck = (letter) => {
-    if (correctGuesses.includes(letter)) return "single-letter shown"
-    else return "single-letter hidden"
+    if (!correctGuesses.includes(letter)) return "hidden"
   }
 
     return (
       <div className="container-letters">
-          {console.log(correctGuesses)}
-          {console.log(incorrectGuesses)}
           {lettersToGuess.map((letter, index) => {
           return (
             <div className="slot" key={index}>

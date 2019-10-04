@@ -1,14 +1,12 @@
 import React from "react"
-import { Link } from 'react-router-dom'
 
 import Diagram from "../Diagram/Diagram"
 import WordToGuess from "../WordToGuess/WordToGuess"
 import AllLetterChoices from "../AllLetterChoices/AllLetterChoices"
 import GameStatus from "../GameStatus/GameStatus"
+import GameEnd from "../GameEnd/GameEnd"
 
 import "./PlayScreen.css"
-import winImage from './images/win.png'
-import loseImage from './images/lose.png'
 
 class PlayScreen extends React.Component {
   state = {
@@ -29,7 +27,6 @@ class PlayScreen extends React.Component {
       const randomWord = this.getRandomWord(wordsArray)
       this.setState({ lettersToGuess: randomWord.split("") })
       this.nonRepeatingLettersToGuess(this.state.lettersToGuess)
-      console.log(this.state.lettersToGuess)
     } catch (err) {
       console.log(err)
     }
@@ -64,10 +61,10 @@ class PlayScreen extends React.Component {
   render() {
     const {
       lettersToGuess,
+      lettersToGuessNonRepeating,
       correctGuesses,
       incorrectGuesses,
-      guessesLeft,
-      lettersToGuessNonRepeating
+      guessesLeft
     } = this.state
 
     const stillPlaying = (
@@ -80,48 +77,21 @@ class PlayScreen extends React.Component {
         <WordToGuess
           lettersToGuess={lettersToGuess}
           correctGuesses={correctGuesses}
-          incorrectGuesses={incorrectGuesses}
         />
         <AllLetterChoices correctionCheck={this.correctionCheck} />
       </div>
     )
 
     const currentView = () => {
-      if (correctGuesses.length === lettersToGuessNonRepeating.length && lettersToGuessNonRepeating.length !== 0) {
-        return (
-          <div>
-            <img className="game-end-image" alt="apples" src={winImage} width={"25%"} />
-            <p>You win!</p>
-            <Link to={'/'}>
-                <button width={"15%"}>
-                    Start again
-                </button>
-            </Link>
-          </div>
-        )
-      }
-      if (this.state.guessesLeft > 0) {
+      if (guessesLeft > 0 && correctGuesses.length !== lettersToGuessNonRepeating.length) {
         return stillPlaying
       }
-      return (
-        <div>
-          <img className="game-end-image" alt="bitten apple" src={loseImage} width={"25%"} />
-          <p>You lose.</p>
-          <Link to={'/'}>
-              <button width={"25%"}>
-                  Start again
-              </button>
-          </Link>
-        </div>
-      )
+      return <GameEnd correctGuesses={correctGuesses} lettersToGuessNonRepeating={lettersToGuessNonRepeating} />
     }
 
     return (
       <div>
         {currentView()}
-        {console.log(this.state.guessesLeft)}
-        {console.log('NON-REPEATING:', lettersToGuessNonRepeating.length)}
-        {console.log('CORRECT GUESSES SO FAR:', correctGuesses.length)}
       </div>
     )
   }

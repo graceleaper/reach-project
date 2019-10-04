@@ -24,7 +24,7 @@ class Diagram extends React.Component {
     render() {
         return (
             <div className="diagram-container">
-                <img className={this.props.guessesLeft > 0 && "current-image animation"} alt="game-state" src={imagesInfo[this.setCurrentImage()]} />
+                <img className="current-image animation" alt="game-state" src={imagesInfo[this.setCurrentImage()]} />
             </div>
         )
     }
