@@ -12,7 +12,7 @@ const WordToGuess = ({correctGuesses, lettersToGuess}) => {
           {lettersToGuess.map((letter, index) => {
           return (
             <div className="slot" key={index}>
-                <div className={letterCheck(letter)}>
+                <div className={(letterCheck(letter))}>
                     {letter}
                 </div>
             </div>

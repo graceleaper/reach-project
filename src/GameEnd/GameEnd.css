@@ -2,3 +2,11 @@
     display: block;
     margin: 0 auto;
 }
+
+.word-reveal {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.3em;
+    background-color: rgb(255, 181, 43);
+    width: 10%;
+}

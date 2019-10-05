@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <div className="game-intro">
             <h1>Falling for Words</h1>
-            <p>Guess all the letters in the secret word before running out of 6 turns.</p>
+            <p>Guess all the letters in the secret word before running out of 6 tries.</p>
             <Link to={'/playscreen'}>
                 <button>
                     Play

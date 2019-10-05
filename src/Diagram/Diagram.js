@@ -3,9 +3,9 @@ import './Diagram.css'
 
 import imagesInfo from './imagesInfo'
 
-class Diagram extends React.Component {
-    setCurrentImage = () => {
-        switch(this.props.guessesLeft) {
+const Diagram = ({guessesLeft}) => {
+    const setCurrentImage = () => {
+        switch(guessesLeft) {
             case 5:
                 return 1
             case 4:
@@ -20,14 +20,11 @@ class Diagram extends React.Component {
                 return 0
         }
     }
-
-    render() {
         return (
             <div className="diagram-container">
-                <img className="current-image animation" alt="game-state" src={imagesInfo[this.setCurrentImage()]} />
+                <img className="current-image animation" alt="game-state" src={imagesInfo[setCurrentImage()]} />
             </div>
         )
-    }
 }
 
 export default Diagram

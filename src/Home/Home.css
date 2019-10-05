@@ -45,6 +45,11 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: #518576;
+    color: white; 
+}
+
 a, a:visited {
     text-decoration: none;
 }

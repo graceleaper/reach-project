@@ -77,16 +77,29 @@ class PlayScreen extends React.Component {
         <WordToGuess
           lettersToGuess={lettersToGuess}
           correctGuesses={correctGuesses}
+          incorrectGuesses={incorrectGuesses}
         />
-        <AllLetterChoices correctionCheck={this.correctionCheck} />
+        <AllLetterChoices
+          correctionCheck={this.correctionCheck}
+          correctGuesses={correctGuesses}
+          incorrectGuesses={incorrectGuesses}
+        />
       </div>
     )
 
     const currentView = () => {
       if (guessesLeft > 0 && correctGuesses.length !== lettersToGuessNonRepeating.length) {
         return stillPlaying
+      } else if (lettersToGuessNonRepeating.length === 0) {
+        return <p>Loading...</p>
+      } else {
+        return (
+          <GameEnd
+            correctGuesses={correctGuesses}
+            lettersToGuessNonRepeating={lettersToGuessNonRepeating}
+            lettersToGuess={lettersToGuess}
+          />)
       }
-      return <GameEnd correctGuesses={correctGuesses} lettersToGuessNonRepeating={lettersToGuessNonRepeating} />
     }
 
     return (

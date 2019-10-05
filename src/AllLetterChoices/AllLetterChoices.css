@@ -18,7 +18,7 @@
     margin-bottom: 1rem;
 }
 
-.single-letter-choice {
+.single-letter-choice-active {
     padding: 15%;
     width: 50%;
     text-align: center;
@@ -26,4 +26,14 @@
     color: white;
     border-radius: 10%;
     cursor: pointer;
+}
+
+.single-letter-choice-deactive {
+    padding: 15%;
+    width: 50%;
+    text-align: center;
+    background-color: #b4b4b4;
+    color: rgb(105, 105 105);
+    border-radius: 10%;
+    pointer-events: none;
 }
