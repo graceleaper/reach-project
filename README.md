@@ -14,7 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the project in the b
 ![Play screen](/readme_images/screenshot-2.gif)
 
 ## Features
-
 - The length of the secret word is displayed to the guesser (e.g. as a set of underscores)
 - As the guesser makes correct guesses, occurrences of the guessed letter in the word
 are shown while unknown letters are still hidden
