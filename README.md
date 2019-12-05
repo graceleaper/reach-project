@@ -1,4 +1,7 @@
-# REACH Project
+# Word Guessing Game: Falling for Words
+
+## Deployed link
+[https://falling-for-words.herokuapp.com/](https://falling-for-words.herokuapp.com/)
 
 ## Setup
 Clone the repository and run:
