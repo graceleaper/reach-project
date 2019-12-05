@@ -14,8 +14,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the project in the b
 ![Play screen](/readme_images/screenshot-2.gif)
 
 ## Features
+- Guesser can select from 3 levels of difficulty before the game begins
 - The length of the secret word is displayed to the guesser (e.g. as a set of underscores)
-- As the guesser makes correct guesses, occurrences of the guessed letter in the word
+- As the guesser makes correct guesses, occurrences of the guessed letter are displayed above the corresponding blanks
 are shown while unknown letters are still hidden
 - The number of guesses remaining is displayed
 - A list of incorrect guesses are displayed
