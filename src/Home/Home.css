@@ -13,7 +13,11 @@ body, html {
     background-color: #dd614a;
     color: white;
     padding: 1em;
-    height: 15em;
+    height: 17em;
+}
+
+.home-button {
+    margin-bottom: 0.2em;
 }
 
 h1,
@@ -90,4 +94,3 @@ a, a:visited {
     -webkit-animation: fall-from-top 1s;
     animation: fall-from-top 1s;
 }
-

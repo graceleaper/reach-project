@@ -9,18 +9,27 @@ import GameEnd from "../GameEnd/GameEnd"
 import "./PlayScreen.css"
 
 class PlayScreen extends React.Component {
-  state = {
-    lettersToGuess: [],
-    lettersToGuessNonRepeating: [],
-    correctGuesses: [],
-    incorrectGuesses: [],
-    guessesLeft: 6
+  constructor(props) {
+    super(props)
+    this.state = {
+      lettersToGuess: [],
+      lettersToGuessNonRepeating: [],
+      correctGuesses: [],
+      incorrectGuesses: [],
+      guessesLeft: 6,
+      allWords: {
+        easy: [],
+        medium: []
+      } 
+    }
   }
 
   async componentDidMount() {
+     console.log('PROPS:', this.props)
     try {
+      // set object with difficulty (key/value pairs: difficulty setting/corresponding #)
       const response = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://app.linkedin-reach.io/words"
+        `https://cors-anywhere.herokuapp.com/http://app.linkedin-reach.io/words?difficulty=${this.props.location.state.difficultyNum}`
       )
       const wordList = await response.text()
       const wordsArray = JSON.stringify(wordList).split("\\n")

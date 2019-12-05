@@ -2,32 +2,25 @@ import React from "react"
 import './AllLetterChoices.css'
 import choices from './choices'
 
-class AllLetterChoices extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      alphabet: choices
-    }
+const styleClickedAndUnclicked = (letter, guessedLetters) => {
+  if (guessedLetters.has(letter)) {
+      return "single-letter-choice-deactive"
+  } else {
+      return "single-letter-choice-active"
   }
+}
 
-  styleClickedAndUnclicked = letter => {
-    if ((this.props.correctGuesses).concat(this.props.incorrectGuesses).includes(letter)) {
-        return "single-letter-choice-deactive"
-    } else {
-        return "single-letter-choice-active"
-    }
-  }
-
-  render() {
+const AllLetterChoices = (props) => {
+  const guessedLetters = new Set(props.correctGuesses.concat(props.incorrectGuesses))
     return (
       <div className="letters-container">
         <div className="letters-board">
-          {this.state.alphabet.map((letter, index) => {
+          {choices.map((letter, index) => {
             return (
               <div className="single-letter-container" key={index}>
                 <div
-                  onClick={() => this.props.correctionCheck(letter)}
-                  className={this.styleClickedAndUnclicked(letter)}
+                  onClick={() => props.correctionCheck(letter)}
+                  className={styleClickedAndUnclicked(letter, guessedLetters)}
                 >
                   {letter}
                 </div>
@@ -37,7 +30,6 @@ class AllLetterChoices extends React.Component {
         </div>
       </div>
     )
-  }
 }
 
 export default AllLetterChoices

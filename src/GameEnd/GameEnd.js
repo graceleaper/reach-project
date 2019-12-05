@@ -7,6 +7,10 @@ import loseImage from './images/lose.png'
 import './GameEnd.css'
 
 const GameEnd = ({correctGuesses, lettersToGuessNonRepeating, lettersToGuess}) => {
+  /*
+     - when game first loads, lettersToGuessNonRepeating will be 0 while word is being retrived
+     from word dictionary API. Thus, we don't want to see a "win message" before game even starts
+  */
     if (correctGuesses.length === lettersToGuessNonRepeating.length && lettersToGuessNonRepeating.length !== 0) {
         return (
           <div>

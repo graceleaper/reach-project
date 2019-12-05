@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 import imagesInfo from './imagesInfo'
+import { difficultyObject } from './config'
 
 const Home = () => {
     return (
@@ -9,11 +10,17 @@ const Home = () => {
             <div className="game-intro">
             <h1>Falling for Words</h1>
             <p>Guess all the letters in the secret word before running out of 6 tries.</p>
-            <Link to={'/playscreen'}>
-                <button>
-                    Play
-                </button>
-            </Link>
+            {Object.keys(difficultyObject).map(difficulty => {
+                const difficultyNum = difficultyObject[difficulty]
+                return (
+                    <Link to={{pathname: '/playscreen', state: {difficultyNum}}}>
+                    <button className="home-button">
+                        {difficulty}
+                    </button>
+                </Link>
+                )
+            })}
+        
             </div>
             <div className="falling-container">
                 <img alt="leaf" src={imagesInfo[0]} className="fall-from-top object" width={"10%"} />
